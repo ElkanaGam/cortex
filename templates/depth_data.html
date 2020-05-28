@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 250px;
+  
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+  
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+    .fixhead{
+    background-color: black;
+    color: white;
+    font-size:16px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Arial';
+    
+    
+}
+
+.container{
+    width: 100%;
+    margin-top: 5px;
+    color: aliceblue;
+    padding: 10px;
+    background-color: #184E72;
+    position: relative;
+}
+</style>
+</head>
+<body>
+
+     <div class= 'fixhead'>
+        cortex server // user ID : {{ user_id }} // depth images results
+    </div>
+   <div class='container'>
+    <h2>Those are the your last {{num}} depth images </h2>
+</div> 
+    {% for item in items %}
+   
+    <div class="gallery">
+  
+    <img src={{ url_for('static', filename=item.depth_img_path) }} alt='img' width="600" height="400">
+  
+  <div class="desc">Color Imgae as captured in : {{ item.time }}</div>
+</div>
+     
+    {% endfor %}
+       
+  
+
+</body>
+</html>

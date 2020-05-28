@@ -1,0 +1,112 @@
+#leftbox { 
+ 
+    float:left;  
+    background:white; 
+    width:83%; 
+    height:100vh; 
+    border-radius: 5px;
+  background-color: #f2f2f2;
+  
+} 
+#rightbox{ 
+    float:right; 
+    background:#E1D9D0; 
+    padding-top: 30px;
+    width:17%; 
+    height:100vh; 
+    font-family: "Segoe UI Symbol";
+    color:#184E72; 
+    font-size: 20px;
+    
+    text-align-last: left;
+    box-shadow: -10px 0px 10px 1px #aaaaaa;
+    
+} 
+#header{ 
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+    padding: 10px;
+    color:#184E72; 
+    text-align:center; 
+    font-family: fantasy;
+    font-size: 45px;
+        
+    }
+#sub{
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+    padding: 10px;
+    color:#184E72; 
+    text-align:center; 
+    font-family: fantasy;
+    font-size: 20px;  
+}
+#content{
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+    padding: 20px;
+    color:#184E72; 
+    text-align:center; 
+    font-family: fantasy;
+    font-size: 80px;  
+}
+
+#num{
+    padding: 20px;
+    color:#184E72; 
+    text-align:center; 
+    font-family: fantasy;
+    font-size: 20px;
+    
+}
+p{
+    text-align: center;
+}
+#form-group{
+    padding: 20px;
+    color:#184E72; 
+    text-align:center; 
+    font-family: fantasy;
+    font-size: 20px;
+}
+form{
+    padding-top: 14px;
+    text-align: center;
+}
+
+input[type=text], select {
+  width: 170px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 40px%;
+  background-color: #040ECE;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0475CA;
+}
+
+.text-danger{
+    font-size: 24px;
+    color: red
+}
+

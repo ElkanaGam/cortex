@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+   <head>
+      <title>cortex server hoepage </title>
+      <link rel="stylesheet" href='../static/grid_style.css'>
+      <link rel="icon" href='./elkana/icon.jpg' type="image/icon type">
+
+   </head>
+<html> 
+    <div class= 'fixhead'>
+        cortex server // user ID : {{ user_id }}
+    </div>
+    <div class = 'welcome'>
+        Welcome back {{username }}!
+    </div>
+    <h2>Here is your last uploaded snapshot data, occured at {{ items.time }}</h2>
+      <div id="thirst" class="200x160px"></div>
+     <div id='hunger'  class="200x160px"></div>
+    <div id='exhaustion' class="200x160px"></div>
+    <div id='happiness'  class="200x160px"></div>
+
+  
+        <div class='wrapper'>
+        <a href="./{{user_id}}/options" class="button">click here for more stats</a>
+        <div class ='info'>In the last  captured snapshot at position 
+                {{ items.trans_x }} {{ items.trans_y }} {{ items.trans_z }} the image from point view was:
+        </div>
+        <div class='image color'> color image
+            <img src= {{items.color_img_path}}>
+        </div>
+        <div class='image depth'> depth image
+            <img src= {{items.depth_img_path}}>
+        </div>
+</div>
+        </html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
+<script>
+    var g1, g2, g3,g4;
+	   document.addEventListener("DOMContentLoaded", function(event) {
+	    g1 = new JustGage({
+		id: "hunger",
+		value: 0.5,
+		levelColors: ["#a9d70b", "#f9c802", "#ff0000"],
+		min: -1,
+		max: 1,
+		label: "hunger"
+	});
+	    g2 = new JustGage({
+		id: "thirst",
+		value: 0.5,
+		levelColors: ["#a9d70b", "#f9c802", "#ff0000"],
+		min: -1,
+		max: 1,
+		label: "thirst"
+	});
+        g3 = new JustGage({
+		id: "happiness",
+		value: 0.5,
+		levelColors: [ "#ff0000","#f9c802" ,"#a9d70b"],
+		min: -1,
+		max: 1,
+		label: "happiness"
+	});
+        g4 = new JustGage({
+		id: "exhaustion",
+		value: 0.5,
+		levelColors: ["#a9d70b", "#f9c802", "#ff0000"],
+		min: -1,
+		max: 1,
+		label: "exhaustion"
+	});
+      });</script>

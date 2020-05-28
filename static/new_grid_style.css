@@ -1,0 +1,158 @@
+.fixhead{
+    background-color: black;
+    color: white;
+    font-size:16px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Arial';
+    
+    
+}
+.welcome{
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+    padding-left: 20px;
+    padding-top: 20px;
+    color:#184E72; 
+    
+    font-family: fantasy;
+    font-size: 40px;  
+}
+h2{
+    margin-right: auto;
+   margin-left: auto;
+    
+    padding-left: 20px;
+    color:#184E72;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-auto-rows: 100px;    
+  grid-gap: 10px;
+  
+  margin: auto;
+  
+  top: 10%;
+  left: 10%;
+  padding: 10px;
+  float: left;
+  border-radius: 15px;
+    
+  
+  
+}
+
+
+
+
+.boxheader{
+  grid-column-start: 1; 
+  grid-column-end: 3; 
+  grid-row-start: 1; 
+  grid-row-end: 3; 
+    padding: 30px;
+ 
+    color:#184E72; 
+    text-align:center; 
+    font-family: fantasy;
+    font-size: 60px;
+
+}
+.feelings{
+    font-family:"Segoe UI Light", Courier, monospace;
+    color:#184E72;
+    font-size: 25px;
+    padding: 20px;
+    
+    text-align: center;   
+}
+.hunger{
+  grid-column-start: 1; 
+    grid-column-end: 2;
+  grid-row-start: 1; 
+  grid-row-end: 3; 
+    
+}
+.thirst{
+  
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1; 
+  grid-row-end: 3;
+ 
+}
+.exh{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3; 
+  grid-row-end: 5;
+ 
+}
+.happ{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3; 
+  grid-row-end: 5;
+ 
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  width: 50%;
+}
+
+
+a.button{
+  text-align: center;
+  background-color:antiquewhite;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 11; 
+  grid-row-end: 12; 
+  font-family:"Segoe UI Light", Courier, monospace;
+  color:#184E72;
+  font-size: 35px;
+  padding-top: 15px;
+    
+}   
+
+.info{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 12; 
+  grid-row-end: 13; 
+  font-family:"Segoe UI Light", Courier, monospace;
+  color:#184E72;
+  font-size: 25px;
+    
+}
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    font-family:"Segoe UI Light", Courier, monospace;
+    color:#184E72;
+    font-size: 20px;
+    text-align: center;
+    padding: inherit;
+   
+
+}
+.color{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 7; 
+  grid-row-end: 9;  
+}
+.depth{
+    grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 9; 
+  grid-row-end: 11;
+}

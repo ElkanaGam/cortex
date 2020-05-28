@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+  position: relative;
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 250px;
+  
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 150px;
+padding: 50px;
+  
+}
+.data{
+    padding-left: 75px;
+    margin: 12px;
+    }
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+div.headline{
+     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+    width: 100
+    background-color: aquamarine;
+    text-align: center;
+    font-size: 30px;
+
+    
+    }
+    .fixhead{
+    background-color: black;
+    color: white;
+    font-size:16px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Arial';
+    
+    
+}
+
+.container{
+    width: 100%;
+    margin-top: 5px;
+    color: aliceblue;
+    padding: 10px;
+    background-color: #184E72;
+    position: relative;
+}
+</style>
+</head>
+<html>
+    <body>
+
+     <div class= 'fixhead'>
+        cortex server // user ID : {{ user_id }} // feelings results
+    </div>
+   <div class='container'>
+    <h2>Those are the plot your last {{num}} feelimgs changes </h2>
+</div>  
+    <div class ='data'>
+    <img src =  {{src}} alt='feelings plot'>
+       
+    </div>
+
+</body>
+</html>

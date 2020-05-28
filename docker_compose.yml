@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+ # container name
+  postgres:
+   # build the image from Dockerfile
+    build:
+      context: ${PWD}
+
+    # bind mount volume for Postgres data
+    volumes:
+     - $PWD/pg-data/:/var/lib/postgresql/data
+      - $PWD/python-app:/var/www/html
+
+    # open port so host machine can access
+    ports:
+     - "5432:5432"
+
+    # configure Postgres environment variables
+    environment:
+     - POSTGRES_USER=objectrocket
+     - POSTGRES_DB=some_db
+     - POSTGRES_PASSWORD=1234

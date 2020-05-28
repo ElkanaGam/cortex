@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+   <head>
+      <title>cortex server hoepage </title>
+      <link rel="stylesheet" href='../static/style.css'/>
+      <link rel="icon" href='./elkana/icon.jpg' type="image/icon type">
+   </head>
+<html>  
+      
+    <body>  
+        <div id = "boxes"> 
+             
+              
+            <div id = "leftbox"> 
+                <div id = 'header'>WELCOME</div>
+                <div id ='sub'> to the</div>
+                <div id = 'content'>cortex server</div>
+                <div id = 'num'> current number of registered users is {{ num }}</div>
+                
+                <form action="/" method="POST">
+               
+                    <label for="fname">First Name</label>
+                    <input type="text" id="user_id" name="user_id" placeholder="Enter Your ID..">
+
+
+                   
+
+                    <input type="submit" value="Submit">
+                  </form>
+                {% if feedback %}
+                <p class="text-danger">{{ feedback }}</p>
+                {% endif %}
+                
+            </div> 
+            
+            
+            
+              
+            <div id = "rightbox"> 
+                
+                <p >The cortex server is an innovative component 
+               that capture all your<br>
+                 feellings<br> movmens<br> and thoughts!<br> 
+                   Then you can adjust your all devices to that data. </p>
+            </div> 
+        </div> 
+    </body>  
+</html>   

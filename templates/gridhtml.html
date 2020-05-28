@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+   <head>
+      <title>cortex server hoepage </title>
+      <link rel="stylesheet" href='../static/new_grid_style.css'>
+      <link rel="icon" href='./elkana/icon.jpg' type="image/icon type">
+   </head>
+<html> 
+    <div class= 'fixhead'>
+        cortex server // user ID : {{ user_id }}
+    </div>
+    <div class = 'welcome'>
+        Welcome back {{username }}!
+    </div>
+    <h2>Here is your last uploaded snapshot data, occured at {{ time }}</h2>
+    <div class="wrapper">
+    <div class="feelings hunger" >Hunger
+        <img src ='./elkana/icon.jpg'>
+        </div>
+      <div class="feelings thirst" >Thirst
+        <img src ='./elkana/icon.jpg'>
+        </div>
+      <div class="feelings exh" >Exhaution
+        <img src ='./elkana/icon.jpg'>
+        </div>
+      <div class="feelings happ" >Happiness
+        <img src ='./elkana/icon.jpg'>
+        </div>
+        
+        <a href="./{{user_id}}/options" class="button">for more stats {{user_id}}</a>
+        <div class ='info'>In the last  captured snapshot at position 
+                {{ x }} {{ y }} {{ y }} the image from point view was:
+        </div>
+        <div class='image color'> color image
+            <img src='../Pictures/card.png'>
+        </div>
+        <div class='image depth'> depth image
+            <img src='../Pictures/meme/elec2.jpg'>
+        </div>
+    </div>
+        </html>

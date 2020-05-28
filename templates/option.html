@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+   <head>
+      <title>cortex server hoepage </title>
+      <link rel="stylesheet" href='../static/option_style.css'>
+      <link rel="icon" href='./elkana/icon.jpg' type="image/icon type">
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
+   </head>
+<html> 
+    <body>
+    <div class= 'fixhead'>
+        cortex server // user ID : {{ user_id }}
+    </div>
+   <div class='container'>
+    <h2>Here you can view your snapshots history.<br>
+    first you need to choose the number of snapshots to be shown. <br>
+       second you need to select the type of data to be shown</h2>
+</div> 
+        <div class='content'>
+<form action="./options" method='POST'>
+  <p>Please enter number of snapshots (max= {{max_snap}}):</p>
+  
+  <input type="text" id="num" name="num" placeholder="1 ">
+  
+
+  <br>  
+
+  <p>Please select type of snapshot data:</p>
+  <input type="radio" id="pose" name="data_type" value="position">
+  <label for="pose">Position</label><br>
+  <input type="radio" id="color" name="data_type" value="color">
+  <label for="color">Color Imahe</label><br>  
+  <input type="radio" id="depth" name="data_type" value="depth">
+  <label for="depth">Depth Image</label><br>
+  <input type="radio" id="feelings" name="data_type" value="feelings">
+  <label for="feelings">Feelings</label><br>
+  <input type="submit" value="Submit">
+</form>
+        </div>
+
+
+    </body>
+</html>

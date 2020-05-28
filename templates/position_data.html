@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#positions {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#positions td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#positions tr:nth-child(even){background-color: #f2f2f2;}
+
+#positions tr:hover {background-color: #ddd;}
+
+#positions th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+    
+  text-align: center;
+  background-color: #184E30;
+  color: white;
+}
+    .fixhead{
+    background-color: black;
+    color: white;
+    font-size:16px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Arial';
+    
+    
+}
+
+.container{
+    width: 100%;
+    margin-top: 5px;
+    color: aliceblue;
+    padding: 10px;
+    background-color: #184E72;
+    position: relative;
+}
+</style>
+</head>
+<body>
+
+     <div class= 'fixhead'>
+        cortex server // user ID : {{ user_id }} // positions results
+    </div>
+   <div class='container'>
+    <h2>Those are the your last {{num}} position data </h2>
+    </div>
+<table id="positions">
+  <tr>
+    <th>Time</th>
+    <th>X position</th>
+    <th>Y position</th>
+    <th>Z position</th>
+  </tr>
+{% for item in items %}
+<tr>
+   
+   <td class="c2">{{item.time}}</td>
+   <td class="c3">{{item.trans_x}}</td>
+   <td class="c4"><SPAN>{{item.trans_y}}</SPAN></td>
+   <td class="c5"><SPAN>{{item.trans_z}}</SPAN></td>
+</tr>
+{% endfor %}
+</table>
+    </body>
+</html>
