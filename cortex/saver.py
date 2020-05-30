@@ -8,7 +8,7 @@ from project_utils.consumer import Consumer
 import project_utils.utils as utils
 from sqlalchemy import *
 
-schema = 'postgres://postgres:elkana1@127.0.0.1/db'
+schema = 'postgres://postgres:elkana1@127.0.0.1/mydb'
 
 def _parse_scheme(scheme,avialable = ['postgres']):
     name = schema.split('://')[0]

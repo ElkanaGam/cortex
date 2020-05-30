@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib import ticker
 
 
-schema = 'postgres://postgres:elkana1@127.0.0.1/db'
+schema = 'postgres://postgres:elkana1@127.0.0.1/mydb'
 
 ##
 #
