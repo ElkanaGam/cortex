@@ -1,6 +1,7 @@
 ## ASD_Project
 The Advance System Design  course final project
-
+1. [1] (#desc)
+2.[2]
 Welcome to the cortex package. cortex allow yow to capture your minds, upload them, analayze them and visualize them!
 
 instalation
