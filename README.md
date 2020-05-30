@@ -42,8 +42,8 @@ from python shell, with the argument `path` is the path to the data:
 ```
 Then you can browse to '127.0.0.1:8080' to view results.
 
-run the install.sh script
-
-install.sh
-
-this script wiil install the postres database container 
+All cortex modules can be run as cli , so you can also run this command from the shell:
+```bash
+$python -m cortex.client upload_sample -h 127.0.0.1 -p 8000 sample.mind
+```
+### Usage as  a python library
