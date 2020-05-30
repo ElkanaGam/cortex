@@ -13,7 +13,7 @@ The Advance System Design course final project
 ---
 
 ## Installation
- 1. run 
+
 > note:
 Due to unfortuntly circumsances cortex is not avialable with `Docker` image for the project.<br/> This will be fix at the next version. Therefor, follow the next step, to instal the package.
 
