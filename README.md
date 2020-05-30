@@ -47,3 +47,22 @@ All cortex modules can be run as cli , so you can also run this command from the
 $python -m cortex.client upload_sample -h 127.0.0.1 -p 8000 sample.mind
 ```
 ### Usage as  a python library
+Cortex provide six modules, client.py was described above. <br/>
+The Server is flask-based server which can be invoked from interpeter or shell. Beside host and port he server accept third argument: if it s invoked from command line this argument is the name of the message-queue, and this has to be a valid url to this queue.this url parsed by the `init_queue` function . Running as function from interpetr allow to pass every object to publish the accepted data, as long as this object has `publish_data` function. In this case message_queue parameter has to be `None`.
+
+```bash
+python -m cortex.client run-server -h 127.0.0.1 -p 8000 raabitmq//127.0.0.1/5672 
+```
+
+```python 
+>>>from cortex.server import run_server
+>>>class my_publisher:
+        __init__(self):
+            ...
+        def publish_data(self, data):
+              print(data)
+>>> p = my_publisher()
+>>>run_server(host='127.0.0.1', port = 8000, p, message_queue = None)
+```
+
+```
