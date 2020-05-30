@@ -19,7 +19,15 @@ Due to unfortuntly circumsances cortex is not avialable with `Docker` image for 
 
 first clone the project from github:
  
-git clone ''
+git clone https://github.com/ElkanaGam/cortex.git
+
+```shell
+cd cortex
+./install.sh
+source .env/bin/activate
+
+
+````
 
 run the install.sh script
 
