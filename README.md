@@ -1,4 +1,4 @@
-# ASD_Project<br/>
+# Cortex Project<br/>
 The Advance System Design course final project
 
 > Welcome to the cortex package.<br/> Cortex allow yow to capture your minds, upload them, analayze them and visualize them!
@@ -13,7 +13,7 @@ The Advance System Design course final project
 ---
 
 ## Installation
-
+ 1. run 
 > note:
 Due to unfortuntly circumsances cortex is not avialable with `Docker` image for the project.<br/> This will be fix at the next version. Therefor, follow the next step, to instal the package.
 
