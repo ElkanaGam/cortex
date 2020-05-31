@@ -17,7 +17,7 @@ The cortex project is composed from three parts: The clinet - the part responsea
 ## Installation
 
 > note:
-Due to unfortuntly circumsances cortex is not avialable with `Docker` image for the project.<br/> This will be fix at the next version. Therefor, follow the next step, to instal the package.
+Due to unfortunately circumsances cortex is not avialable with `Docker image` for the project.<br/> This will be fix at the next version. Therefore, follow the next step, to instal the package.
 
 first clone the project from github:
 ```
@@ -33,9 +33,9 @@ $source .env/bin/activate
 The project is ready to be run.
 
 ## usage 
-Cortex can be used as a coplete system or alternatively you can take separates part of it.<br/>
-To run it as a coplete system run the `run-pipline.sh` command. This supposed to  install and run  all the needed part of the system: message-queue and database, and run the servers. After running this command, simply prepare your data file and run the `client`:
-from python shell, with the argument `path` is the path to the data:
+Cortex can be used as a complete system, or alternatively you use it as python package, and take separates parts of it.<br/>
+To run it as a complete system run the `run-pipline.sh` command. This supposed to install and run  all the needed part of the system: message-queue and database, and run the servers. After running this command, simply prepare your data file and run the `client`:
+For example, from python shell, with the argument `path` is the path to the data:
 ``` python 
 >>>from cortex.client import upload_sample
 >>>upload_sample(host ='127.0.0.11, port = 8000, path =path)
