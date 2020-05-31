@@ -188,6 +188,7 @@ class DataBase :
         connection = self.engine.connect()
         query = select([table]).where(table.c[col_name] == value)
         ret = connection.execute(query)
+        print('row')
         return ret
 
     def get_cols(self, t_name, cols_names):

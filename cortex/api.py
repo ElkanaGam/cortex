@@ -37,6 +37,7 @@ def pack(ret, data_name):
 
 @app.route('/', methods=['GET'])
 def hello():
+    print('in server')
     return 'welcome to api server'
 
 @app.route('/users', methods=['GET'])
@@ -114,6 +115,7 @@ def images_data(user_id,s_id,name):
 @click.option('--database','-d',default=schema)
 @click.command()
 def run_api_server(host = '127.0.0.1', port=5000, database=schema):
+    print(schema)
     app.config['db'] = DataBase(database)
     app.run(host=host, port=port, debug=True)
 

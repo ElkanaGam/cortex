@@ -8,8 +8,8 @@ import project_utils.cortex_pb2 as cortex_pb2
 import project_utils.utils as utils
 
 
-UPLOADS_NUM = utils.UPLOADS_NUM
-silent = True
+UPLOADS_NUM = utils.UPLOADS_NUM  # to limit numbers of uploads
+
 
 
 class Client:
