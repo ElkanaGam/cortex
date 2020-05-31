@@ -2,13 +2,14 @@ from flask import Flask, render_template, Response , request, redirect, url_for
 from pathlib import Path
 from datetime import datetime as dt
 import os
+import click
 from sqlalchemy import *
 from datetime import datetime
 import matplotlib.pyplot as plt
 from matplotlib import ticker
 
 
-schema = 'postgres://postgres:elkana1@127.0.0.1/mydb'
+schema = 'postgres://postgres:elkana1@127.0.0.1/db'
 
 ##
 #
@@ -69,9 +70,12 @@ def user_data(user_id):
         src = url_for('static', filename=name)
     return render_template(f'./{data_type}_data.html',  items=items, username=username, num=num, user_id=user_id, src=src)
 
-
+@click.command()
+@click.option('--port', '-p',default=8080)
+@click.option('--host', '-h', default='127.0.0.1')
+@click.argument('url)
 def run_server():
-    app.run(host='127.0.0.1', port = 8080, debug=True)
+    app.run(host='127.0.0.1', port = 8080,url , debug=True)
 
 
 ##
@@ -213,6 +217,11 @@ def get_feelings_plot(data_table, fig_name):
     return f'images/feelings_plot/{fig_name}_feelings.jpg'
 
 
+@click.group()
+def main():
+    pass
+
+main.add_command('run_server')
 if __name__ == '__main__':
-    run_server()
+    main()
     
