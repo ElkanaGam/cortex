@@ -9,7 +9,7 @@ import project_utils.utils as utils
 
 
 UPLOADS_NUM = utils.UPLOADS_NUM  # to limit numbers of uploads
-
+silent = False
 
 
 class Client:

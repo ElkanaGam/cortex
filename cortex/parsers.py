@@ -15,8 +15,8 @@ SRC_EX = utils.SERVER_EXCHANGE
 SRC_RT_KEY = utils.SERVER_ROUTING_KEY
 DEST_EX = 'database'
 logger = utils.create_logger('logs/parsers.log')
-#silent = utils.SILENT_MODE
-silent = True
+silent = utils.SILENT_MODE
+#silent = True
 module_names = utils.parsers_modules
 
 

@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 from matplotlib import ticker
 
 
-schema = 'postgres://postgres:elkana1@127.0.0.1/db'
+global schema 
+
 
 ##
 #
@@ -73,9 +74,16 @@ def user_data(user_id):
 @click.command()
 @click.option('--port', '-p',default=8080)
 @click.option('--host', '-h', default='127.0.0.1')
-@click.argument('url)
-def run_server():
-    app.run(host='127.0.0.1', port = 8080,url , debug=True)
+@click.option('--database', '-d')
+def run_server(host, port, database):
+    global schema
+    global engine 
+    global metadata 
+    schema = database
+    engine = create_engine(schema, echo=False)
+    metadata = MetaData(bind=engine)
+    print(schema)
+    app.run(host='127.0.0.1', port = 8080, debug=True)
 
 
 ##
@@ -83,8 +91,7 @@ def run_server():
 # RETRIEVE FROM DB SECTION
 #
 ##
-engine = create_engine(schema, echo=False)
-metadata = MetaData(bind=engine)
+
 
 
 
@@ -221,7 +228,7 @@ def get_feelings_plot(data_table, fig_name):
 def main():
     pass
 
-main.add_command('run_server')
+main.add_command(run_server)
 if __name__ == '__main__':
     main()
     

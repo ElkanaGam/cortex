@@ -11,11 +11,12 @@ from sqlalchemy import *
 schema = 'postgres://postgres:elkana1@127.0.0.1/db'
 
 def _parse_scheme(scheme,avialable = ['postgres']):
-    name = schema.split('://')[0]
+    name = scheme.split('://')[0]
     if name not in avialable:
         raise Exception('Only postgresql in supported currently ')
     else:
-        return schema
+        print(scheme)
+        return scheme
 
 
 class DataBase :
@@ -27,7 +28,7 @@ class DataBase :
         unique by the user_id and time stamp_row
     '''
 
-    def __init__(self, schema, ):
+    def __init__(self, schema ):
         '''
         create conection to database with the scheme supplied
         :param schema: database url to be connected
@@ -221,7 +222,7 @@ class Saver:
     def get_data(self, user_id, timestamp=None):
         return self.db.get_data(user_id, timestamp)
 
-    def save_user_data(self, to_print = True):
+    def save_user_data(self, to_print = False):
         def callback(ch, method, properties, body):
             data = json.loads(body)
             if to_print:
@@ -238,7 +239,7 @@ logger = utils.create_logger('logs/saver.log')
 
 @click.command()
 def clear():
-    schema = 'postgres://postgres:elkana1@127.0.0.1/db'
+    schema = 'postgres://postgres:elkana1@127.0.0.1/new_db'
     db = DataBase(schema)
     logger.info('clearing all data base tables ')
     db.remove_tables()
