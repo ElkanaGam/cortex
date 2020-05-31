@@ -40,7 +40,11 @@ For example, from python shell, with the argument `path` is the path to the data
 >>>from cortex.client import upload_sample
 >>>upload_sample(host ='127.0.0.11, port = 8000, path =path)
 ```
-Then you can browse to '127.0.0.1:8080' to view results.
+Or, from command line:
+```bash 
+$python -m client upload-sample -p 8000 -h 127.0.0.1 tests_data
+```
+Where `tests_data` is a data file contain one snapshots and ready to be used for testing. After running the client, you can browse to '127.0.0.1:8080' to view results.
 
 All cortex modules can be run as cli , so you can also run this command from the shell:
 ```bash
@@ -48,7 +52,7 @@ $python -m cortex.client upload_sample -h 127.0.0.1 -p 8000 sample.mind
 ```
 ### Usage as  a python library
 Cortex provide six modules, `client.py` was described above. <br/>
-The Server is flask-based server which can be invoked from interpeter or shell.The server accept the data from the client and publish it. Therefore, beside host and port he server accept third argument: if it s invoked from command line this argument is the name of the message-queue, and this has to be a valid url to this queue. this url parsed by the `init_queue` function and it can be modified to handle your configuration for teh message queue . Running as function from interpetr allow to pass every object to publish the accepted data, as long as this object has `publish_data` function. In this case message_queue parameter has to be `None`.
+The Server is flask-based server which can be invoked from interpeter or shell.The server accept the data from the client and publish it. Therefore, beside host and port he server accept third argument: if it s invoked from command line this argument is the name of the message-queue, and this has to be a valid url to this queue. this url parsed by the `init_queue` function and it can be modified to handle your configuration for teh message queue . Running as function from interpeter allow to pass every object to publish the accepted data, as long as this object has `publish_data` function. In this case message_queue parameter has to be `None`.
 
 ```bash
 python -m cortex.client run-server -h 127.0.0.1 -p 8000 raabitmq//127.0.0.1/5672 
@@ -116,8 +120,8 @@ $curl 127.0.0.1:5000/users/42/snapshots/3/pose
 ```
 ## Configuration
 
-Coretx try to  allow to you flexiblity as much as it can. Those configuration can be made in under `projectu_utils\utils.py` file.
-1. Adding another parser: you can add your costumaized function to parse the data. it even can be  your object. you parser has to handle json data (it is how the data deliverd in the queue), and all you need to do is to put your code under the cortex pacakge, and in `utils.py`, in the parsers_module variable, add your python cide name to the kist. that it. the collect function will collect your functions or nmethods.
+Coretx try to  allow to you flexiblity as much as it can. Those configuration can be made under `projectu_utils\utils.py` file.
+1. Adding another parser: you can add your costumaized function to parse the data. it even can be  your object. All your parser has to do is to handle json data (it is how the data deliverd in the queue), and all *you* need to do, is to put your code under the cortex pacakge, and in `utils.py`, in the parsers_module variable, add your python code name to the list. that it. the collect functions will collect your functions or methods.
 ```python 
 >>>parsers_module = ['parsers_list', 'your_inoviative_parser']
 ```
@@ -135,8 +139,8 @@ SILENT_MODE = True
 parsers_modules = ['parser_list']
 ```
 3. Client issues:
-the cliend demand a parser object to parse the raw data. this object has to be with `serialize(data, type='snapshot'), desrialize_data(data, type='snapshot')` method. This object is *not* exposed and has to be hard-coded in the client.py. the default protocol that suppotred by the server  is currently protobuf and all data is converted to this protocol via those parsers object.<br/>
-Another elemnt that can be control is the UPLOADS_NUM - limit the numbers of uploaded snapshots, again in the `utils.py` file.
+The cliend demand a parser object to parse the raw data. this object has to be with a `serialize(data, type='snapshot'), desrialize_data(data, type='snapshot')` method.<br/> This object is *not* exposed and cannot be accessed through command line, and has to be hard-coded in the `client.py`. the default protocol that suppotred by the server is currently protobuf and all data is converted to this protocol via those parsers object.<br/>
+Another element that can be control, is the UPLOADS_NUM - this variable limit the numbers of uploaded snapshots,  and cahnges are made in the `utils.py` file.
 
 ## Contact
 Elkana1234@gmail.com. 
